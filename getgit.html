@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="synacknetwork.com">
+    <title>GetGitZio - GitHub Repo .zip </title>
+    <style>
+        body {
+            background-color: #2f2f2f; 
+            color: white; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #downloadLink {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: white; 
+        }
+        #downloadLink:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Git Repo .zip</h1>
+    <h2>Enter GitHub Repository</h2>
+    <input type="text" id="repoInput" placeholder="e.g., GitUser/repo-name">
+    <br>
+    <button onclick="generateDownloadLink()">Get .zip link</button>
+
+    <br><br>
+    <a id="downloadLink" href="#" download>Download Repo</a>
+
+    <script>
+        function generateDownloadLink() {
+            const input = document.getElementById("repoInput").value.trim();
+            const downloadLink = document.getElementById("downloadLink");
+
+            if (input.includes("/")) {
+                downloadLink.href = `https://github.com/${input}/archive/refs/heads/main.zip`;
+                downloadLink.textContent = "Download Repo";
+                downloadLink.style.display = "inline";
+            } else {
+                alert("Please enter a valid repository in the format 'owner/repo-name'");
+            }
+        }
+    </script><br>
+    Enter Username and Repo ONLY.<br>
+https://github.com/githubtraining/hellogitworld<br>
+You would enter: githubtraining/hellogitworld
+<br>
+<br>
+<br>
+Code grabs GitHubRepo/Branch/main.zip.<br> 
+Sometime's faster when on the go....<br>
+<p>Made by 
+        <a href="http://synacknetwork.com" target="_blank" style="color: white;">SynAckNetwork</a><br>
+01.17.2025
+    </p>
+    <br><br><br>
+ 
+</body>
+</html>
